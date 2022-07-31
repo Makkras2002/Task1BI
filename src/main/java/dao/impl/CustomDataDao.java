@@ -56,7 +56,7 @@ public class CustomDataDao implements DataDao {
     public String selectSumAndMedian() throws DaoException {
         Connection connection = null;
         PreparedStatement statement = null;
-        Integer sumOfInt = 0;
+        Long sumOfInt = 0l;
         Double medianOfDouble = 0.0;
         try {
             connection = DriverManager.getConnection(
@@ -66,7 +66,7 @@ public class CustomDataDao implements DataDao {
             statement = connection.prepareStatement(SQL_COUNT_INT_SUM_AND_MEDIAN__OF_DOUBLE);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                sumOfInt = resultSet.getInt(1);
+                sumOfInt = resultSet.getLong(1);
                 medianOfDouble = resultSet.getDouble(2);
             }
             return "Cумма всех целых чисел -> " + sumOfInt+" || Медиана всех дробных чисел -> " + medianOfDouble;

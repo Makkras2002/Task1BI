@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        FileGeneretor.getInstance().generate100Files("C:\\100Files");
+        //FileGeneretor.getInstance().generate100Files("C:\\100Files");
         Scanner scanner = new Scanner(System.in);
         FileService fileService = FileService.getInstance();
         while (true) {
